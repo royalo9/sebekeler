@@ -7,10 +7,6 @@
 <title>Şəbəkə Mövzuları</title>
 
 <style>
-body {
-    font-family: sans-serif;
-    margin: 0;
-}
 
 /* Fix edilmiş menyu */
 #menu {
@@ -22,6 +18,8 @@ body {
     padding: 10px;
     border-bottom: 1px solid #ccc;
     z-index: 1000;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
 #menu button {
@@ -425,13 +423,24 @@ h2 {
 // Menyu elementini götürək
 const menu = document.getElementById("menu");
 
-// Body-nin top padding-i menyunun real hündürlüyünə uyğun olsun
-window.onload = () => {
+// Menyu hündürlüyünə görə body padding təyin edən funksiya
+function fixBodyPadding() {
     const menuHeight = menu.offsetHeight;
     document.body.style.paddingTop = (menuHeight + 20) + "px";
-};
+}
 
-// Avtomatik menyu qurulması
+// Səhifə DOM hazır olanda padding tətbiq et
+document.addEventListener("DOMContentLoaded", fixBodyPadding);
+
+// Ekran ölçüsü dəyişəndə yenidən hesabla (telefon üçün çox vacibdir)
+window.onresize = fixBodyPadding;
+
+// Bəzi mobil brauzerlər üçün backup
+window.onload = fixBodyPadding;
+
+
+
+// Avtomatik menyu düymələrinin yaradılması və scroll
 const headers = document.querySelectorAll("h2");
 
 headers.forEach((h) => {
@@ -439,7 +448,7 @@ headers.forEach((h) => {
     btn.innerText = h.innerText;
 
     btn.onclick = () => {
-        const menuHeight = menu.offsetHeight; // menyunun real hündürlüyü
+        const menuHeight = menu.offsetHeight; 
         const y = h.getBoundingClientRect().top + window.scrollY - menuHeight - 10;
 
         window.scrollTo({
