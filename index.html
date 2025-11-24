@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Şəbəkə Mövzuları</title>
+
+<style>
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+/* Fix edilmiş menyu */
+#menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    z-index: 1000;
+}
+
+#menu button {
+    margin: 4px;
+    padding: 7px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+/* Suallar */
+.section {
+    padding: 15px;
+    margin: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Başlıqlar */
+h2 {
+    margin-top: 40px;
+}
+</style>
+
+</head>
+<body>
+
+<div id="menu"></div>
+
+
+<!-- ===================================================== -->
+<!-- ===================== CONTENT ======================== -->
+<!-- ===================================================== -->
+
+<div class="section" id="s1">
+<h2>1. Şəbəkə və onun növləri</h2>
+<p><br>Şəbəkə iki və ya daha çox cihazın məlumat mübadiləsi üçün<br>
+    <br>bir-birinə qoşulmasıdır.Əsas növləri məhdud bir ərazidəki<br>
+    <br>cihazları birləşdirən LAN (Local Area Network) və daha geniş<br>
+    <br>coğrafi əraziləri birləşdirən WAN (Wide Area Network) ilə təmsil<br> 
+    <br>olunur. MAN (Metropolitan Area Network) bir şəhər ərazisini<br>
+    <br>əhatə edir, PAN (Personal Area Network) isə fərdi cihazları<br>
+    <br>əlaqələndirir. Şəbəkələr, həmçinin, qoşulma topologiyasına<br>
+    <br>(ulduz, halqa) və idarəetmə modelinə (peer-to-peer, client-server)<br>
+    <br>görə də fərqlənir. Bu strukturlar məlumatların effektiv və təhlükəsiz<br>
+    <br>ötürülməsini təmin edir.<br></p>
+</div>
+
+<div class="section" id="s2">
+<h2>2. Şəbəkə avadanlıqları və onların işləmə mexanizmləri</h2>
+<p><br>Əsas şəbəkə avadanlıqları məlumatların ötürülməsini,<br>
+    <br>yönləndirilməsini və idarə edilməsini təmin edir.<br>
+    <br>Kommutatorlar (Switches) MAC ünvanlarına əsaslanaraq məlumatı<br>
+    <br>(frame) eyni LAN daxilində dəqiq ünvana çatdırır. Routerlər<br>
+    <br>isə IP ünvanlarına baxaraq müxtəlif şəbəkələr arasında məlumat<br>
+    <br>paketlərini yönləndirir və marşrutlama qərarları qəbul edir.<br>
+    <br>Firewall-lar təhlükəsizlik qaydalarına əsasən daxil olan və<br>
+    <br>çıxan trafiki filtrələyir. Hub-lar (təkrarlayıcılar) sadəcə<br>
+    <br>olaraq siqnalı təkrar edir, lakin effektiv deyillər.<br></p>
+</div>
+
+<div class="section" id="s3">
+<h2>3. OSI modeli</h2>
+<p><br>OSI (Open Systems Interconnection) modeli şəbəkə rabitə<br>
+    <br>prosesini standartlaşdıran yeddi təbəqəli konsepsiyadır.<br>
+    <br>Bu təbəqələr Fizikidən (1-ci təbəqə, bitlər), Məlumat <br>
+    <br>Bağlantısına (2-ci təbəqə, kadrlar), Şəbəkəyə <br>
+    <br>(3-cü təbəqə, paketlər), Nəqliyyata (4-cü təbəqə, seqmentlər), <br>
+    <br>Seansa, Təqdimata və Tətbiqə (7-ci təbəqə) qədər məlumatın <br>
+    <br>hərəkətini təsvir edir. Model müxtəlif istehsalçıların <br>
+    <br>avadanlıqlarının bir-birilə əlaqə qurmasına imkan verir.<br>
+    <br>Hər təbəqə yalnız yuxarı və aşağı təbəqələrlə qarşılıqlı<br>
+    <br>əlaqədə olur.<br></p>
+</div>
+
+<div class="section" id="s4">
+<h2>4. Nəqliyyat təbəqəsi və protokolları</h2>
+<p><br>Nəqliyyat təbəqəsi (OSI-də 4-cü təbəqə) məlumatların <br>
+    <br>son nöqtələr arasında etibarlı və nizamlı ötürülməsindən <br>
+    <br>məsuldur. Əsas protokolları TCP (Transmission Control Protocol) <br>
+    <br>və UDP (User Datagram Protocol) təşkil edir. TCP əlaqəyə <br>
+    <br>yönəlik (connection-oriented) olub, məlumatın çatdırılmasına <br>
+    <br>zəmanət verir və itirilmiş paketləri bərpa edir. UDP isə <br>
+    <br>əlaqəsiz (connectionless) və sürətli ötürmə üçün istifadə <br>
+    <br>olunur, lakin çatdırılmaya zəmanət vermir. Bu təbəqə məlumatları <br>
+    <br>seqmentlərə bölür və yenidən yığır, həmçinin port <br>
+    <br>nömrələri ilə tətbiqləri fərqləndirir.<br></p>
+</div>
+
+<div class="section" id="s5">
+<h2>5. Şəbəkə təbəqəsi, protokolları və əsas göstəriciləri</h2>
+<p><br>Şəbəkə təbəqəsi (OSI-də 3-cü təbəqə) şəbəkələr arasında <br>
+    <br>məlumat paketlərinin mənbədən təyinat nöqtəsinə çatdırılmasına <br>
+    <br>cavabdehdir. Əsas protokolu IP (İnternet Protokolu) olub, hər <br>
+    <br>cihaza unikal ünvan (IP ünvan) təyin edir. Bu təbəqə marşrutlaşdırma <br>
+    <br>qərarlarını qəbul edir. Məlumatlar bu təbəqədə paket adlanır. <br>
+    <br>Əsas göstəricilər arasında marşrut seçimi, ünvanlama və tıxacın <br>
+    <br>idarə edilməsi yer alır.<br></p>
+</div>
+
+<div class="section" id="s6">
+<h2>6. Router, marşrutlama cədvəli və routerin əsas xüsusiyyətləri</h2>
+<p><br>Routerlər (Marşrutlaşdırıcılar) fərqli IP şəbəkələri arasında <br>
+    <br>paketləri yönləndirən şəbəkə cihazlarıdır. Onlar paketlərin <br>
+    <br>hara göndərilməli olduğuna qərar vermək üçün marşrutlama <br>
+    <br>cədvəllərindən istifadə edirlər. Bu cədvəllər ya statik <br>
+    <br>şəkildə administrator tərəfindən daxil edilir, ya da dinamik <br>
+    <br>marşrutlama protokolları vasitəsilə avtomatik öyrənilir. <br>
+    <br>Routerlər müxtəlif marşrutları müqayisə etmək üçün <br>
+    <br>metrikalardan (məsələn, ən qısa yol) istifadə edir. Onlar <br>
+    <br>şəbəkələri seqmentləşdirərək trafikin idarə edilməsində və <br>
+    <br>təhlükəsizliyində vacib rol oynayır.<br></p>
+</div>
+
+<div class="section" id="s7">
+<h2>7. Məlumat bağlantısı təbəqəsi və onun əsas göstəriciləri</h2>
+<p><br>Məlumat bağlantısı təbəqəsi (OSI-də 2-ci təbəqə) eyni <br>
+    <br>şəbəkə seqmentində olan cihazlar arasında məlumatların etibarlı <br>
+    <br>ötürülməsini təmin edir. Bu təbəqədə məlumatlar kadr (frame) <br>
+    <br>adlanır və unikal MAC ünvanları (Media Access Control) ilə <br>
+    <br>identifikasiya edilir. Təbəqə iki alt təbəqəyə bölünür: LLC <br>
+    <br>(Logical Link Control) və MAC. Əsas funksiyalara səhv <br>
+    <br>aşkarlanması, fiziki ünvanlama və mühitə daxil olma nəzarəti <br>
+    <br>(məsələn, Ethernet və Wi-Fi) daxildir.<br></p>
+</div>
+
+<div class="section" id="s8">
+<h2>8. Fiziki təbəqə və onun əsas göstəriciləri</h2>
+<p><br>Fiziki təbəqə (OSI-də 1-ci təbəqə) şəbəkə mühiti üzərindən <br>
+    <br>xam rəqəmsal bitlərin fiziki ötürülməsinə cavabdehdir. Bu, <br>
+    <br>elektrik siqnalları, işıq impulsları və ya radio dalğaları <br>
+    <br>şəklində həyata keçirilir. Əsas göstəricilərə kabel növləri <br>
+    <br>(mis, optik lif), birləşdiricilərin standartları (RJ-45), <br>
+    <br>siqnalın kodlaşdırılması, ötürmə sürəti və fiziki topologiya <br>
+    <br>daxildir. Bu təbəqədə avadanlıqlara kabellər, təkrarlayıcılar <br>
+    <br>(repeaters) və hub-lar aid edilir.<br></p>
+</div>
+
+<div class="section" id="s9">
+<h2>9. Məlumatın kapsullaşdırılması və əks proses</h2>
+<p><br>Məlumatın kapsullaşdırılması OSI modelində bir tətbiqdən <br>
+    <br>(7-ci təbəqə) fiziki mühitə (1-ci təbəqə) doğru hərəkət <br>
+    <br>edərkən hər təbəqənin məlumata öz başlıq və ya quyruğunu <br>
+    <br>əlavə etmə prosesidir. Məsələn, Nəqliyyat təbəqəsi başlıq <br>
+    <br>əlavə edərək paketi Seqmentə çevirir, Şəbəkə təbəqəsi IP başlıq <br>
+    <br>əlavə edərək onu Paketə çevirir və s. Əks proses isə məlumatın <br>
+    <br>təyinat nöqtəsində tərs ardıcıllıqla hər təbəqədən keçərkən müvafiq <br>
+    <br>başlıqların çıxarılmasıdır.<br></p>
+</div>
+
+<div class="section" id="s10">
+<h2>10. Nəqliyyat təbəqəsi port nömrələri</h2>
+<p><br>Nəqliyyat təbəqəsi port nömrələri bir IP ünvanına çatan məlumatı <br>
+    <br>hansı tətbiqə və ya xidmətə çatdırmaq lazım olduğunu müəyyən edir. <br>
+    <br>Port nömrələri 0-dan 65535-ə qədərdir və üç əsas kateqoriyaya <br>
+    <br>bölünür. Yaxşı Tanınmış Portlar (Well-Known Ports, 0-1023) standart<br> 
+    <br>xidmətlər (məsələn, HTTP üçün 80, HTTPS üçün 443) üçün istifadə olunur. <br>
+    <br>Qeydə alınmış Portlar (Registered Ports, 1024-49151) müəyyən <br>
+    <br>tətbiqlər üçün qeyd olunur. Özəl/Dinamik Portlar (49152-65535) <br>
+    <br>isə müştəri tətbiqləri tərəfindən müvəqqəti istifadə olunur.<br></p>
+</div>
+
+<div class="section" id="s11">
+<h2>11. Cisco iyerarxik modeli</h2>
+<p><br>Cisco iyerarxik modeli şəbəkəni üç əsas təbəqəyə bölərək dizayn <br>
+    <br>etməyi tövsiyə edir: Giriş (Access), Paylama (Distribution) <br>
+    <br>və Əsas (Core). Giriş təbəqəsi son istifadəçiləri şəbəkəyə birləşdirən <br>
+    <br>kommutatorları ehtiva edir. Paylama təbəqəsi Giriş təbəqələrindən <br>
+    <br>gələn trafikin idarə edilməsi, marşrutlaşdırma və siyasətlərin tətbiqi <br>
+    <br>(məsələn, ACL-lər) üçündür. Əsas təbəqə isə şəbəkədə yüksək <br>
+    <br>sürətli magistral rabitəni təmin edir və sürətli ötürməyə yönəlmişdir. <br>
+    <br>Bu model şəbəkənin miqyaslanmasını, təhlükəsizliyini və idarəetməsini <br>
+    <br>asanlaşdırır.<br></p>
+</div>
+
+<div class="section" id="s12">
+<h2>12. TCP/IP modeli və protokolları</h2>
+<p><br>TCP/IP (Transmission Control Protocol/Internet Protocol) modeli <br>
+    <br>İnternetin əsasını təşkil edən dörd və ya beş təbəqəli bir modeldir <br>
+    <br>(Tətbiq, Nəqliyyat, İnternet/Şəbəkə, Şəbəkə Girişi). Bu model OSI <br>
+    <br>modelinə nisbətən daha praktiki bir yanaşmadır. Əsas protokollara <br>
+    <br>Tətbiq təbəqəsində HTTP, DNS; Nəqliyyat təbəqəsində TCP və UDP; <br>
+    <br>İnternet təbəqəsində isə IP, ICMP daxildir. TCP/IP modeli şəbəkələrarası <br>
+    <br>rabitəni təmin edir və bütün müasir şəbəkələrin əsas arxitekturasıdır.<br></p>
+</div>
+
+<div class="section" id="s13">
+<h2>13. IP ünvanlama və növləri</h2>
+<p><br>IP ünvanlama cihazları şəbəkədə unikal olaraq tanımaq üçün <br>
+    <br>istifadə olunan məntiqi ünvanlama sistemidir. Ən geniş yayılmış növlər <br>
+    <br>32-bitli IPv4 və 128-bitli IPv6-dır. IPv4 ünvanları siniflərə (A, B, C) <br>
+    <br>bölünür, həmçinin xüsusi ünvanlar (məsələn, şəxsi ünvanlar, loopback) <br>
+    <br>mövcuddur. IPv6 ünvan çatışmazlığı problemini həll edir və təhlükəsizlik <br>
+    <br>xüsusiyyətlərini təkmilləşdirir. IP ünvanlar cihazların şəbəkələr <br>
+    <br>arasında bir-birini tapmasına imkan verir.<br></p>
+</div>
+
+<div class="section" id="s14">
+<h2>14. Alt şəbəkələr və tətbiqi</h2>
+<p><br>Alt şəbəkə (Subnetting) böyük bir şəbəkəni daha kiçik, idarəolunan <br>
+    <br>hissələrə bölmə prosesidir. Bu, IP ünvanlarının səmərəli istifadəsini <br>
+    <br>artırır və yayım (broadcast) trafikini azaldır. Bütün IP sinifləri <br>
+    <br>(A, B, C) üçün tətbiq edilir, lakin müasir şəbəkələrdə CIDR <br>
+    <br>(Classless Inter-Domain Routing) əsasında VLSM (Variable Length Subnet Mask) <br>
+    <br>istifadəsi üstünlük təşkil edir. Praktiki tətbiq şəbəkə maskasının <br>
+    <br>dəyişdirilməsi yolu ilə host sayını müəyyən etmək və təhlükəsizliyi <br>
+    <br>təmin etməkdən ibarətdir.<br></p>
+</div>
+
+<div class="section" id="s15">
+<h2>15. Şəbəkə əməliyyat sistemi (NOS)</h2>
+<p><br>NOS (Network Operating System) şəbəkə avadanlıqlarını idarə <br>
+    <br>edən və şəbəkə resurslarına çıxışı təmin edən proqram <br>
+    <br>təminatıdır. Əsas funksiyalarına istifadəçi və resurs idarəetməsi, <br>
+    <br>təhlükəsizlik, habelə marşrutlaşdırma və kommutasiya xidmətləri <br>
+    <br>daxildir. Növlərinə Microsoft Windows Server, Linux (Red Hat, Ubuntu) <br>
+    <br>və ya Cisco IOS kimi cihaz OS-ləri aid edilir. NOS-un gələcəyi Cloud<br>
+    <br>və SDN (Software-Defined Networking) texnologiyalarına inteqrasiya olunmuş, <br>
+    <br>daha çevik və avtomatlaşdırılmış sistemlərdə görülür.<br></p>
+</div>
+
+<div class="section" id="s16">
+<h2>16. Cisco-nun IOS sistemi</h2>
+<p><br>Cisco IOS (Internetwork Operating System) Cisco router və <br>
+    <br>kommutatorları kimi şəbəkə avadanlıqlarının əsas əməliyyat sistemidir. <br>
+    <br>IOS cihazların funksionallığını idarə edir, o cümlədən marşrutlaşdırma, <br>
+    <br>kommutasiya, təhlükəsizlik (ACL-lər) və şəbəkə interfeyslərinin <br>
+    <br>konfiqurasiyası. O, administratorlara cihazları Əmr Sətri İnterfeysi <br>
+    <br>(CLI) vasitəsilə idarə etmək imkanı verir. IOS şəbəkə cihazlarının <br>
+    <br>dayanıqlığını və miqyaslanmasını təmin edən əsas proqram təminatıdır.<br></p>
+</div>
+
+<div class="section" id="s17">
+<h2>17. Cisco IOS cihazlarına qoşulma</h2>
+<p><br>Cisco IOS cihazlarına qoşulma prosesi əsasən üç yolla həyata <br>
+    <br>keçirilir: Konsol portu (ilkin konfiqurasiya üçün fiziki əlaqə), <br>
+    <br>Telnet/SSH (şəbəkə üzərindən uzaqdan təhlükəsiz və ya təhlükəsiz olmayan əlaqə) <br>
+    <br>və AUX portu (dial-up modem vasitəsilə ehtiyat əlaqə). Konsol qoşulması <br>
+    <br>üçün xüsusi konsol kabeli və terminal emulyator proqramı istifadə olunur. <br>
+    <br>Uzaqdan qoşulmalar təhlükəsizlik üçün adətən SSH (Secure Shell) <br>
+    <br>vasitəsilə şifrələnərək həyata keçirilir.<br></p>
+</div>
+
+<div class="section" id="s18">
+<h2>18. CLI və promptlar</h2>
+<p><br>CLI (Command Line Interface) şəbəkə administratorlarına mətn <br>
+    <br>əmrləri vasitəsilə şəbəkə cihazlarını konfiqurasiya etməyə <br>
+    <br> və idarə etməyə imkan verir. Cisco IOS-da daxil olmaq üçün <br>
+    <br>müxtəlif promptlar mövcuddur: User EXEC Mode (>), Privileged <br>
+    <br>EXEC Mode (#) və Global Configuration Mode ((config)#). Enable <br>
+    <br>əmri User rejimindən Privileged rejimə keçməyə imkan verir. <br>
+    <br>CLI prompbları administratorun hazırda hansı konfiqurasiya <br>
+    <br>səviyyəsində olduğunu göstərir.<br></p>
+</div>
+
+<div class="section" id="s19">
+<h2>19. ACL-lər və konfiqurasiya</h2>
+<p><br>Girişə icazə siyahıları (ACL) şəbəkə cihazlarında (routerlər, kommutatorlar) <br>
+    <br>trafikin icazə verilmiş və ya rədd edilmiş olmasını müəyyən edən qaydalar <br>
+    <br>toplusudur. ACL-lər Standart (yalnız mənbə IP ünvanına əsaslanır) və <br>
+    <br>Genişləndirilmiş (mənbə/təyinat IP, port və protokol növünə əsaslanır) <br>
+    <br>növlərə ayrılır. Konfiqurasiya edilərkən, qaydalar yuxarıdan aşağıya <br>
+    <br>icra olunur və sonuncu qayda hər şeyi rədd edən (implicit deny) bir əmrdir. <br>
+    <br>ACL-lər təhlükəsizliyi təmin etmək və şəbəkə trafikini nəzarətdə <br>
+    <br>saxlamaq üçün istifadə olunur.<br></p>
+</div>
+
+<div class="section" id="s20">
+<h2>20. Dinamik marşrutlama və protokollar</h2>
+<p><br>Marşrutlama protokolları routerlərə şəbəkə marşrutlarını avtomatik <br>
+    <br>öyrənməyə və ən yaxşı yolu seçməyə kömək edir. Onlar Məsafə Vektoru <br>
+    <br>(Distance Vector, məsələn, RIP) və Link Vəziyyəti (Link State, məsələn, OSPF) <br>
+    <br>növlərinə bölünür. OSPF (Open Shortest Path First) Link Vəziyyəti <br>
+    <br>protokolu olub, hər routerin bütün şəbəkənin xəritəsini (topologiyasını) <br>
+    <br>yaratmasını təmin edir. Konfiqurasiyası router ospf [process-id] əmri <br>
+    <br>ilə başlayır və şəbəkə sahələri müəyyən edilərək (Area) ən qısa yolu <br>
+    <br>tapmaq üçün Dijkstra alqoritmindən istifadə edir.<br></p>
+</div>
+
+<div class="section" id="s21">
+<h2>21. SOC loqlar və PPTGC</h2>
+<p><br>SOC (Security Operations Center) təhlükəsizlik hadisələrinin <br>
+    <br>monitorinqi, analizi və onlara reaksiya verilməsi üçün mərkəzləşdirilmiş <br>
+    <br>komandadır. Loqların toplanılması bütün şəbəkə cihazlarından və <br>
+    <br>tətbiqlərdən məlumatların SIEM (Security Information and Event Management) <br>
+    <br>sisteminə ötürülməsi ilə həyata keçirilir. Əsas komponentlər <br>
+    <br>İnsanlar (analitiklər), Proseslər (reaksiya planları), Texnologiyalar <br>
+    <br>(SIEM, SOAR), İdarəetmə (Governance) və Uyğunluq (Compliance) <br>
+    <br>elementlərindən ibarətdir (PPTGC).<br></p>
+</div>
+
+<div class="section" id="s22">
+<h2>22. SOC arxitekturası</h2>
+<p><br>SOC-un qlobal arxitekturası təhlükəsizliyi təmin etmək üçün <br>
+    <br>müəyyən bir çərçivə təqdim edir. Bu arxitektura log toplama və <br>
+    <br>saxlama sistemlərini, təhlükə kəşfiyyatı (Threat Intelligence) <br>
+    <br>platformalarını və cavab alətlərini əhatə edir. Əsas funksiyalara <br>
+    <br>24/7 monitorinq, hadisənin aşkarlanması (Alerting), analiz (Triage), <br>
+    <br>hadisəyə reaksiya (Incident Response) və təhlükə ovçuluğu (Threat Hunting) <br>
+    <br>daxildir. SOC məqsədi təhlükəsizlik risklərini azaltmaq və şirkətin <br>
+    <br>kritik aktivlərini qorumaqdır.<br></p>
+</div>
+
+<div class="section" id="s23">
+<h2>23. SOC səviyyələri və rollar</h2>
+<p><br>SOC adətən üç əsas səviyyəyə (Tier) bölünür. Tier 1 (Triage Analyst) <br>
+    <br>ilkin siqnalları təhlil edir və yanlış həyəcanları ayırır. <br>
+    <br>Tier 2 (Incident Responder) təsdiqlənmiş insidentləri daha <br>
+    <br>dərindən araşdırır və aradan qaldırma tədbirlərini icra edir. <br>
+    <br>Tier 3 (Threat Hunter/Expert) mürəkkəb təhdidləri axtarır və yeni <br>
+    <br>müdafiə strategiyaları hazırlayır. Hər bir rol spesifik təcrübə tələb <br>
+    <br>edir və bütün bu rolların birgə işi təhlükəsizlik insidentlərinə <br>
+    <br>effektiv reaksiya verməyi təmin edir.<br></p>
+</div>
+
+<div class="section" id="s24">
+<h2>24. SOC alətləri və problemlər</h2>
+<p><br>SOC alətləri təhlükəsizlik fəaliyyətini dəstəkləyən proqram <br>
+    <br>təminatıdır. Əsas alətlər SIEM, SOAR (Security Orchestration, <br>
+    <br> Automation and Response) və TIP (Threat Intelligence Platform) <br>
+    <br>platformalarıdır. SOC nəsilləri texnologiyanın inkişafı ilə dəyişir <br>
+    <br>(məsələn, 1-ci nəsil sadə loq analizi, 3-cü nəsil isə avtomatlaşdırma və AI). <br>
+    <br>Əsas problemlər yüksək səviyyəli mütəxəssis çatışmazlığı, çoxlu <br>
+    <br>siqnal səsi (alert fatigue) və alətlərin bahalığıdır.<br></p>
+</div>
+
+<div class="section" id="s25">
+<h2>25. Autentifikasiya və faktorlar</h2>
+<p><br>Autentifikasiya istifadəçinin iddia etdiyi şəxs olduğunu <br>
+    <br>təsdiqləmə prosesidir. Üç əsas faktoru var: Bildiyiniz bir <br>
+    <br>şey (parol), Sahib olduğunuz bir şey (token, telefon) və <br>
+    <br>Siz olduğunuz bir şey (barmaq izi, üz tanıma). Çoxfaktorlu <br>
+    <br>Autentifikasiya (MFA) təhlükəsizliyi əhəmiyyətli dərəcədə <br>
+    <br>artırır. Reallaşdırma texnologiyalarına SAML, OAuth, Kerberos <br>
+    <br>və biometrik skanerlər daxildir.<br></p>
+</div>
+
+<div class="section" id="s26">
+<h2>26. Avtorizasiya modelləri</h2>
+<p><br>Avtorizasiya autentifikasiya edilmiş istifadəçinin hansı resurslara <br>
+    <br>və hansı səviyyədə çıxış etmək hüququnun olduğunu müəyyən etmə <br>
+    <br>prosesidir. Əsas modelləri DAC (Discretionary Access Control),<br>
+    <br>MAC (Mandatory Access Control) və ən geniş yayılmış RBAC <br>
+    <br>(Role-Based Access Control) təşkil edir. RBAC istifadəçilərə <br>
+    <br>rollar təyin edir və hər rolun müəyyən hüquqları olur.Protokollarına <br>
+    <br>RADIUS və TACACS+ daxildir.</p>
+</div>
+
+<div class="section" id="s27">
+<h2>27. NAS, RAID və TACACS+</h2>
+<p><br>NAS (Network Attached Storage) şəbəkəyə qoşulan və mərkəzləşdirilmiş <br>
+    <br>fayl yaddaşı xidməti təklif edən ixtisaslaşdırılmış serverdir. <br>
+    <br>İşləmə prinsipi fayl səviyyəli məlumatlara şəbəkə protokolları<br>
+    <br>(məsələn, SMB, NFS) vasitəsilə çıxışı təmin etməkdən ibarətdir. <br>
+    <br>RAID (Redundant Array of Independent Disks) NAS-da məlumatların <br>
+    <br>davamlılığını və performansını artırmaq üçün istifadə olunur.<br>
+    <br>TACACS+ (Terminal Access Controller Access-Control System Plus) isə AAA<br>
+    <br>(Autentifikasiya, Avtorizasiya, Mühasibat) xidməti təmin edən bir protokoldur.<br></p>
+</div>
+
+<div class="section" id="s28">
+<h2>28. DHCP server və snooping</h2>
+<p><br>DHCP Server (Dynamic Host Configuration Protocol) şəbəkədəki <br>
+    <br>cihazlara avtomatik olaraq IP ünvanı,alt şəbəkə maskası və <br>
+    <br>digər konfiqurasiya məlumatlarını təyin edir. DHCP Relay Agent <br>
+    <br>fərqli şəbəkə seqmentlərindəki müştərilərin DHCP serverlə əlaqə <br>
+    <br>qurmasına kömək edir. DHCP Snooping isə kommutatorlarda icazəsiz <br>
+    <br>DHCP serverlərdən gələn zərərli cavabları bloklayaraq şəbəkəni<br>
+    <br>DHCP hücumlarından qoruyan bir təhlükəsizlik xüsusiyyətidir.<br></p>
+</div>
+
+<div class="section" id="s29">
+<h2>29. NAT texnologiyası</h2>
+<p><br>Şəbəkə Ünvanının Tərcüməsi (NAT - Network Address Translation) <br>
+    <br>bir IP ünvanını digərinətərcümə edən bir marşrutlaşdırma <br>
+    <br>texnologiyasıdır. Əsas məqsədi şəxsi (private) IP ünvanlarını<br>
+    <br>(məsələn, 192.168.1.x) İnternetdə istifadə edilən ictimai (public) <br>
+    <br>IP ünvanlarına çevirməkdir.PAT/NAPT (Port Address Translation) <br>
+    <br>bir ictimai IP ünvanını minlərlə şəxsi ünvana xidmət etmək üçün<br>
+    <br>port nömrələri ilə birləşdirərək IPv4 ünvan çatışmazlığını yumşaldır.<br></p>
+</div>
+
+<div class="section" id="s30">
+<h2>30. Şəbəkə hücumları və müdafiə</h2>
+<p><br>Şəbəkə hücumları şəbəkənin məxfilik, bütövlük və əlçatanlıq <br>
+    <br>xüsusiyyətlərini pozmağa yönəlib. Əsas hücumlara DDoS <br>
+    <br>(Distributed Denial of Service), Malware (zərərli proqramlar),<br>
+    <br>Phishing və MiTM (Man-in-the-Middle) hücumları daxildir. Reallaşma <br>
+    <br>(müdafiə) texnologiyalarına Firewall-lar, IDS/IPS <br>
+    <br>(Intrusion Detection/Prevention Systems), VPN-lər <br>
+    <br>(Virtual Private Networks)və Endpoint Security həlləri daxildir.<br></p>
+</div>
+
+
+
+<!-- ===================================================== -->
+<!-- ================= JavaScript ========================= -->
+<!-- ===================================================== -->
+
+<script>
+
+// Menyu elementini götürək
+const menu = document.getElementById("menu");
+
+// Body-nin top padding-i menyunun real hündürlüyünə uyğun olsun
+window.onload = () => {
+    const menuHeight = menu.offsetHeight;
+    document.body.style.paddingTop = (menuHeight + 20) + "px";
+};
+
+// Avtomatik menyu qurulması
+const headers = document.querySelectorAll("h2");
+
+headers.forEach((h) => {
+    const btn = document.createElement("button");
+    btn.innerText = h.innerText;
+
+    btn.onclick = () => {
+        const menuHeight = menu.offsetHeight; // menyunun real hündürlüyü
+        const y = h.getBoundingClientRect().top + window.scrollY - menuHeight - 10;
+
+        window.scrollTo({
+            top: y,
+            behavior: "smooth"
+        });
+    };
+
+    menu.appendChild(btn);
+});
+
+</script>
+
+</body>
+</html>
